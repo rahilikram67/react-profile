@@ -8,7 +8,7 @@ import TextIcon from "./TextIcon"
 export default function Intro() {
     return <div className="h-44 w-full border flex justify-center">
         <Animate>
-            <div className="py-2 text-left w-96">
+            <div className="py-2 text-left md:w-96">
                 <Typography variant="h3" fontFamily="cursive">
                     Rahil Ikram
                     <a className="text-blue-400 ml-3 hover:text-blue-700" href={cv} download>

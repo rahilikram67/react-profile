@@ -1,5 +1,5 @@
-import { Email, Instagram, LinkedIn, Phone, Twitter } from "@mui/icons-material"
-import { Card, CardContent, Grid, Typography, Rating } from "@mui/material"
+import { Email, Instagram, LinkedIn, Phone, Twitter, GitHub } from "@mui/icons-material"
+import { Card, CardContent, Grid, Typography, Rating, Link } from "@mui/material"
 import react from "../assets/react.svg"
 import angular from "../assets/angular.png"
 import nodejs from "../assets/nodejs.png"
@@ -18,15 +18,25 @@ import Animate from "./Animate"
 
 
 export default function Main() {
-    const Stars = (size: number) => <Rating value={size} />
+
+
+    const sidebar = [
+        { text: "rahilikram67", icon: <GitHub className="text-gray-600" />, link: "https://github.com/rahilikram67" },
+        { text: "(+92) 308 8212344", icon: <Phone className="text-gray-600" />, link: "tel:+923088212344" },
+        { text: "rahil.ikram67@gmail.com", icon: <Email className="text-gray-600" />, link: "mailto:rahil.ikram67@gmail.com" },
+        { text: "m.rahil.ikram", icon: <Instagram className="text-gray-600" />, link: "https://instagram.com/m.rahil.ikram" },
+        { text: "rahil-ikram", icon: <LinkedIn className="text-gray-600" />, link: "https://www.linkedin.com/in/rahil-ikram/" }
+    ]
+
+
     return <Grid container spacing={1} className="py-3 bg-gray-100 justify-around">
         <Grid item md={4}>
             <div className="md:ml-48">
-                <TextIcon icon={<Phone className="text-gray-600" />} text="(+92) 308 8212344" />
-                <TextIcon icon={<Email className="text-gray-600" />} text="rahil.ikram67@gmail.com" />
-                <TextIcon icon={<Instagram className="text-gray-600" />} text="m.rahil.ikram" />
-                <TextIcon icon={<Twitter className="text-gray-600" />} text="@RahilIkram67" />
-                <TextIcon icon={<LinkedIn className="text-gray-600" />} text="rahil-ikram" />
+
+                {sidebar.map((el, i) => <Link target="_blank" href={el.link}>
+                    <TextIcon icon={el.icon} text={el.text} />
+                </Link>)}
+
             </div>
         </Grid>
         <Grid item md={4} width="400px">
